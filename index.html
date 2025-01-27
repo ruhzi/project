@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Creation Interface</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Your logo</div>
+      <div class="nav-links">
+        <a href="#task-creation">Create Task</a>
+        <a href="#data-display">Data Display</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <h1>Welcome to TaskFlow</h1>
+      <p>Your one-stop solution for task management and data scraping.</p>
+      <a href="#task-creation" class="cta-button">Get Started</a>
+    </section>
+
+    <section id="task-creation" class="section">
+      <h2>Create a New Task</h2>
+      <p>Select a scenario below to get started:</p>
+      <div class="scenario-selection">
+        <button class="scenario-btn" data-scenario="social-media">Social Media Scraping</button>
+        <button class="scenario-btn" data-scenario="find-person">Find Person</button>
+        <button class="scenario-btn" data-scenario="job-search">Job Search</button>
+        <button class="scenario-btn" data-scenario="data-enrichment">Data Enrichment</button>
+        <button class="scenario-btn" data-scenario="database-search">Database Search</button>
+      </div>
+
+      <div id="form-container">
+        <form id="social-media-form" class="task-form hidden" aria-labelledby="social-media-heading">
+          <h3 id="social-media-heading">Social Media Scraping</h3>
+          <label for="platform">Select Platform:</label>
+          <select id="platform" required>
+            <option value="">Choose a platform</option>
+            <option value="facebook">Facebook</option>
+            <option value="instagram">Instagram</option>
+            <option value="twitter">Twitter</option>
+          </select>
+          <label for="social-link">Social Media Link:</label>
+          <input type="url" id="social-link" placeholder="Enter the social media link" required>
+          <span class="error-message" id="social-link-error" aria-live="polite"></span>
+          <button type="button" class="submit-task">Start Scraping</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="data-display" class="section">
+      <h2>Data Display</h2>
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Company</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data will be populated dynamically -->
+        </tbody>
+      </table>
+      <button id="export-button">Export to Excel</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by ruhzi</p>
+    <p><a href="https://github.com/ruhzi" target="_blank">GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
